@@ -22,7 +22,7 @@ public class Second extends AppCompatActivity {
 
     double x;
     double y;
-    int a;
+    double a;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class Second extends AppCompatActivity {
                 nu2.getText().toString();
                 x = Integer.valueOf(nu1.getText().toString());
                 y = Integer.valueOf(nu2.getText().toString());
-                Double a;
+
                 a = x + y;
                 ans.setText(String.valueOf(a));
 
