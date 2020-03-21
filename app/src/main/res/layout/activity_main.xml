@@ -4,35 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Second">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="152dp"
+        android:text="@string/num01"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/nametxt"
+        android:id="@+id/nametxt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="253dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="69dp"
+        android:layout_marginStart="24dp"
         android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/num02"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/nametxt3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAlignment="center"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/nametxt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="316dp"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="270dp"
         android:text="ENTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nametxt3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

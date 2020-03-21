@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,38 +13,52 @@ import android.widget.TextView;
 
 public class Second extends AppCompatActivity {
 
-    EditText num1;
-    EditText num2;
+    private static final String TAG ="three";
+    EditText nu1;
+    EditText nu2;
+    TextView ans;
+    Button add,sub,mul,div;
 
-    Button btnSend;
+    int x,y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        //Intent intent = getIntent();
-        //String name = intent.getStringExtra("name");
-        //TextView nameView = findViewById(R.id.txt1);
-        //nameView.setText("Hello"+name);
+        add=findViewById(R.id.add);
+        sub=(Button)findViewById(R.id.min);
+        mul=(Button)findViewById(R.id.mul);
+        div=(Button)findViewById(R.id.dev);
 
-        num1 = findViewById(R.id.nametxt2);
-        num2 = findViewById(R.id.nametxt3);
-        btnSend = findViewById(R.id.btn2);
+        Intent intent=getIntent();
+        String n1 = intent.getStringExtra("n1");
+        String n2 = intent.getStringExtra("n2");
 
+        nu1=findViewById(R.id.txt1);
+        nu2=findViewById(R.id.txt2);
+        ans=findViewById(R.id.ans1);
 
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String n1 = num1.getText().toString();
-                String n2 = num2.getText().toString();
+        nu1.setText(n1);
+        nu2.setText(n2);
 
-                Intent intent = new Intent(Second.this, three.class);
-                intent.putExtra("n1", n1);
-                intent.putExtra("n2", n2);
+        x = Integer.parseInt(n1);
+        y = Integer.parseInt(n2);
 
-                startActivity(intent);
-            }
-        });
+        Log.i(TAG,"onCreate : x =" + x);
+        Log.i(TAG,"onCreate : y ="+y);
+
+    }
+    public void addition(View view){
+        ans.setText(String.valueOf(x+y));
+    }
+    public void sub(View view){
+        ans.setText(String.valueOf(x-y));
+    }
+    public void div(View view){
+        ans.setText(String.valueOf(x/y));
+    }
+    public void mul(View view){
+        ans.setText(String.valueOf(x*y));
     }
 }
 
