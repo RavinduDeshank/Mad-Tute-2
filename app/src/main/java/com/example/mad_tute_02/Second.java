@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class Second extends AppCompatActivity {
 
@@ -54,13 +54,7 @@ public class Second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                nu1.getText().toString();
-                nu2.getText().toString();
-                x = Integer.valueOf(nu1.getText().toString());
-                y = Integer.valueOf(nu2.getText().toString());
-
-                a = x + y;
-                ans.setText(String.valueOf(a));
+                ans.setText(String.valueOf(x+y));
 
             }
         });
@@ -68,13 +62,7 @@ public class Second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                nu1.getText().toString();
-                nu2.getText().toString();
-                x = Integer.valueOf(nu1.getText().toString());
-                y= Integer.valueOf(nu2.getText().toString());
-                Double a;
-                a = x - y;
-                ans.setText(String.valueOf(a));
+                ans.setText(String.valueOf(x-y));
 
             }
         });
@@ -82,13 +70,7 @@ public class Second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                nu1.getText().toString();
-                nu2.getText().toString();
-                x = Integer.valueOf(nu1.getText().toString());
-                y= Integer.valueOf(nu2.getText().toString());
-                Double a;
-                a = x / y;
-                ans.setText(String.valueOf(a));
+                ans.setText(String.valueOf(x/y));
 
             }
         });
@@ -96,13 +78,7 @@ public class Second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                nu1.getText().toString();
-                nu2.getText().toString();
-                x = Integer.valueOf(nu1.getText().toString());
-                y= Integer.valueOf(nu2.getText().toString());
-                Double a;
-                a = x * y;
-                ans.setText(String.valueOf(a));
+                ans.setText(String.valueOf(x*y));
 
             }
         });

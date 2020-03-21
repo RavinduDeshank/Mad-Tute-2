@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Second">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -13,6 +13,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="152dp"
         android:text="@string/num01"
+        android:textColor="@color/back"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +35,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="80dp"
         android:text="@string/num02"
+        android:textColor="@color/back"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/nametxt3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -58,7 +60,9 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="166dp"
         android:layout_marginBottom="270dp"
+        android:background="@color/back"
         android:text="ENTER"
+        android:textColor="@color/text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
