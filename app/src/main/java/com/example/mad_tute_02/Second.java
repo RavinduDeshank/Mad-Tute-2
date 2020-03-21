@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Second extends AppCompatActivity {
 
@@ -19,46 +20,92 @@ public class Second extends AppCompatActivity {
     TextView ans;
     Button add,sub,mul,div;
 
-    int x,y;
+    double x;
+    double y;
+    int a;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        add=findViewById(R.id.add);
-        sub=(Button)findViewById(R.id.min);
-        mul=(Button)findViewById(R.id.mul);
-        div=(Button)findViewById(R.id.dev);
+        add = findViewById(R.id.add);
+        sub = findViewById(R.id.min);
+        mul = findViewById(R.id.mul);
+        div = findViewById(R.id.dev);
 
-        Intent intent=getIntent();
+        final Intent intent = getIntent();
         String n1 = intent.getStringExtra("n1");
         String n2 = intent.getStringExtra("n2");
 
-        nu1=findViewById(R.id.txt1);
-        nu2=findViewById(R.id.txt2);
-        ans=findViewById(R.id.ans1);
+        nu1 = findViewById(R.id.txt1);
+        nu2 = findViewById(R.id.txt2);
+        ans = findViewById(R.id.ans1);
 
         nu1.setText(n1);
         nu2.setText(n2);
 
-        x = Integer.parseInt(n1);
-        y = Integer.parseInt(n2);
+        x = Double.parseDouble(n1);
+        y = Double.parseDouble(n2);
 
-        Log.i(TAG,"onCreate : x =" + x);
-        Log.i(TAG,"onCreate : y ="+y);
+        Log.i(TAG, "onCreate : x =" + x);
+        Log.i(TAG, "onCreate : y =" + y);
 
-    }
-    public void addition(View view){
-        ans.setText(String.valueOf(x+y));
-    }
-    public void sub(View view){
-        ans.setText(String.valueOf(x-y));
-    }
-    public void div(View view){
-        ans.setText(String.valueOf(x/y));
-    }
-    public void mul(View view){
-        ans.setText(String.valueOf(x*y));
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nu1.getText().toString();
+                nu2.getText().toString();
+                x = Integer.valueOf(nu1.getText().toString());
+                y = Integer.valueOf(nu2.getText().toString());
+                Double a;
+                a = x + y;
+                ans.setText(String.valueOf(a));
+
+            }
+        });
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nu1.getText().toString();
+                nu2.getText().toString();
+                x = Integer.valueOf(nu1.getText().toString());
+                y= Integer.valueOf(nu2.getText().toString());
+                Double a;
+                a = x - y;
+                ans.setText(String.valueOf(a));
+
+            }
+        });
+        div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nu1.getText().toString();
+                nu2.getText().toString();
+                x = Integer.valueOf(nu1.getText().toString());
+                y= Integer.valueOf(nu2.getText().toString());
+                Double a;
+                a = x / y;
+                ans.setText(String.valueOf(a));
+
+            }
+        });
+        mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                nu1.getText().toString();
+                nu2.getText().toString();
+                x = Integer.valueOf(nu1.getText().toString());
+                y= Integer.valueOf(nu2.getText().toString());
+                Double a;
+                a = x * y;
+                ans.setText(String.valueOf(a));
+
+            }
+        });
     }
 }
 
